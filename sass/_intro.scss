@@ -1,0 +1,41 @@
+.intro {
+  @include flex(center, center);
+  padding-top: 12rem;
+  padding-bottom: 16rem;
+  & > * {
+    width: 50%;
+  }
+
+  &__content {
+    padding-right: 13rem;
+  }
+  &__desc {
+    margin-top: 4.5rem;
+    margin-bottom: 5rem;
+  }
+
+  @media screen and (max-width: 1279px) {
+  }
+
+  @media screen and (max-width: 1023px) {
+    .intro__content {
+      padding-right: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-top: 2.5rem 0 8rem;
+    display: block;
+    & > * {
+      width: 100%;
+    }
+
+    &__content {
+      margin-bottom: 3.5rem;
+    }
+
+    &__desc {
+      margin-bottom: 3.5rem;
+    }
+  }
+}

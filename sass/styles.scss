@@ -1,0 +1,158 @@
+@import "./variables";
+@import "./mixin";
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  background-color: white;
+  color: $text-color;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 2.5rem 4.2rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+}
+
+.btn--primary {
+  background-color: $primary-color;
+  color: #fff;
+}
+
+.btn--outline {
+  border: 1px solid $gray-color;
+  color: $gray-color;
+}
+
+.block {
+  text-align: center;
+  &__caption {
+    position: relative;
+    margin-bottom: 4.5rem;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0 0.5rem;
+    font-weight: 500;
+    color: $heading-color;
+  }
+
+  &__caption::before {
+    left: 0;
+    transform: translateX(-100%) translateY(-50%);
+  }
+  &__caption::after {
+    right: 0;
+    transform: translateX(100%) translateY(-50%);
+  }
+  &__caption::before,
+  &__caption::after {
+    content: "";
+    position: absolute;
+    height: 0.2rem;
+    width: 3rem;
+    background-color: $primary-color;
+    top: 50%;
+  }
+
+  &__caption--left {
+    padding-left: 4rem;
+    margin-bottom: 3rem;
+  }
+  &__caption--left::after {
+    display: none;
+  }
+  &__caption--left::before {
+    transform: none;
+  }
+
+  &__heading {
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: $heading-color;
+    span {
+      display: block;
+    }
+  }
+}
+
+.text {
+  font-family: 300;
+  line-height: 1.6;
+}
+
+.border {
+  border: 1px solid rgba($color: $gray-color, $alpha: 0.1);
+  border-radius: 3rem;
+}
+
+.logo {
+  margin-right: 12.5rem;
+  @include flex(center);
+  cursor: pointer;
+  &-img {
+    width: 40px;
+    height: 40px;
+  }
+  &-text {
+    margin-left: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $heading-color;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btn {
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+  }
+
+  .block {
+    margin-bottom: 5rem;
+    &__heading {
+      font-size: 3.5rem;
+    }
+    &__caption {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@import "./header";
+@import "./banner";
+@import "./work";
+@import "./intro";
+@import "./plan";
+@import "./client";
+@import "./started";
+@import "./footer";

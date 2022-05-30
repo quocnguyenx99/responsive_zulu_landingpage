@@ -1,0 +1,84 @@
+.banner {
+  position: relative;
+  margin-top: 7rem;
+  @include flex(center);
+  &-info {
+    width: 35%;
+    &__heading {
+      color: $heading-color;
+    }
+    &__heading {
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 4rem;
+    }
+    &__desc {
+      margin-bottom: 5rem;
+    }
+    &__buttons {
+      .btn:first-child {
+        margin-right: 4rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+      }
+    }
+  }
+  &__image {
+    width: 65%;
+    transform: translateX(4rem);
+  }
+
+  @media screen and (max-width: 1279px) {
+    &-info {
+      &__heading {
+        font-size: 4.5rem;
+        margin-bottom: 3rem;
+      }
+
+      &__buttons {
+        .btn {
+          border-radius: 1rem;
+          padding: 1.5rem 2rem;
+          &:first-child {
+            margin-right: 2rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+          }
+        }
+      }
+      &__desc {
+        margin-bottom: 3rem;
+      }
+    }
+    &__image {
+      transform: translateX(1rem);
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    flex-direction: column;
+    // &-info,
+    // &__image {
+    //   width: 100%;
+    // }
+    & > * {
+      width: 100%;
+    }
+
+    .banner__image {
+      transform: none;
+      margin-top: 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-top: 3rem;
+    &-info {
+      &__heading {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.plan {
+  &-list {
+    padding-top: 7rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 4rem;
+    &__item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 6.5rem 3rem;
+      &-title {
+        margin-top: 1rem;
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 3rem;
+        color: $heading-color;
+      }
+      &-price {
+        color: $heading-color;
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin-bottom: 3rem;
+        padding-bottom: 4rem;
+        border-bottom: 1px solid #eee;
+        sup {
+          vertical-align: top;
+        }
+
+        span {
+          font-weight: 500;
+        }
+      }
+      &-month {
+        font-size: 4rem;
+        font-weight: 500;
+      }
+
+      &:hover {
+        box-shadow: 5px 5px 70px 10px rgba($color: $gray-color, $alpha: 0.2);
+      }
+      .btn {
+        @include transition-ease-in-out;
+      }
+      &:hover .btn {
+        background-color: $primary-color;
+        color: white;
+        border: 0;
+      }
+
+      &-start {
+        margin: auto auto 0;
+        display: block;
+        width: max-content;
+      }
+
+      &-label {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1.5rem;
+        background-color: $pink-color;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        color: white;
+        text-transform: capitalize;
+      }
+    }
+
+    &__feature {
+      margin-top: 7rem;
+      &-title {
+        font-size: 2rem;
+        font-weight: 500;
+        color: $heading-color;
+        margin-bottom: 3.5rem;
+      }
+      &-item {
+        @include flex(center);
+        margin-bottom: 3rem;
+        &:last-child {
+          margin-bottom: 7.5rem;
+        }
+      }
+      &-icon {
+        color: #9ba9bc;
+        font-size: 2.5rem;
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    &-list {
+      display: grid;
+      justify-content: flex-start;
+      grid-auto-columns: 60%;
+      grid-auto-flow: column;
+      grid-gap: 6rem;
+      overflow: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding: 1rem;
+      grid-template-columns: unset;
+
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+      }
+      & > * {
+        scroll-snap-align: start;
+      }
+    }
+  }
+}

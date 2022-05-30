@@ -1,0 +1,49 @@
+.started {
+  margin: 20rem auto;
+  position: relative;
+  padding: 6.5rem 3.5rem;
+  background-color: $dark-gray-color;
+  max-width: 80rem;
+  border-radius: 40px;
+  text-align: center;
+
+  &__desc {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    span {
+      display: block;
+    }
+  }
+  &__smile {
+    width: 20%;
+  }
+
+  &__comment {
+    width: 20%;
+  }
+  @media screen and (max-width: 767px) {
+    margin-top: 7rem;
+  }
+}
+
+.started__comment {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+.started__smile {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transform: translate(26%, -50%);
+}
+
+@media screen and (max-width: 1023px) {
+  .started__smile {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate(10%, -50%);
+  }
+}

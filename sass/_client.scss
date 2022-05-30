@@ -1,0 +1,80 @@
+.client {
+  margin-top: 16rem;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 7rem;
+    margin-top: 9rem;
+  }
+  &__item {
+    padding: 4.5rem 2rem;
+    text-align: center;
+
+    img {
+      width: 50%;
+      margin: 0 auto 2.5rem;
+    }
+
+    &:hover {
+      box-shadow: 5px 5px 70px 10px rgba($color: $gray-color, $alpha: 0.2);
+    }
+  }
+  &__name {
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: $heading-color;
+  }
+  &__position {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2.5rem;
+  }
+
+  &__rating {
+    margin-top: 3.5rem;
+    color: $yellow-color;
+  }
+
+  // &__slider {
+  //   margin-top: 6rem;
+  //   @include flex(center, center);
+  //   &--left {
+  //     margin-right: 3rem;
+  //   }
+  // }
+
+  @media screen and (max-width: 1023px) {
+    &__list {
+      display: grid;
+      justify-content: flex-start;
+      grid-auto-columns: 60%;
+      grid-auto-flow: column;
+      grid-gap: 5rem;
+      overflow: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding: 1rem;
+      grid-template-columns: unset;
+
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+      }
+      & > * {
+        scroll-snap-align: start;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-top: 10rem;
+  }
+}
